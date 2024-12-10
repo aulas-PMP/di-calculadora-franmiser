@@ -209,6 +209,7 @@ public class Calculadora {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     if (modoEntrada.equals("Ratón") || modoEntrada.equals("Libre")) {
+                        pantallaEntrada.setForeground(Color.WHITE);
                         String comando = e.getActionCommand();
 
                         // Agregar coma (punto decimal) al número actual
@@ -286,6 +287,7 @@ public class Calculadora {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (modoEntrada.equals("Teclado Numérico") || modoEntrada.equals("Libre")) {
+                    pantallaEntrada.setForeground((Color.WHITE));
                     char keyChar = e.getKeyChar();
                     int keyCode = e.getKeyCode();
 
@@ -299,6 +301,7 @@ public class Calculadora {
                         }
 
                         pantallaEntrada.setText(pantallaEntrada.getText() + keyChar);
+                        pantallaEntrada.setForeground(Color.WHITE);
                     }
                     // Verificar si la tecla presionada es un operador
                     else if (keyCode == KeyEvent.VK_ADD || keyCode == KeyEvent.VK_SUBTRACT ||
@@ -395,7 +398,7 @@ public class Calculadora {
                         }
                     }
                     // Verificar si la tecla es la tecla "Escape" (borrar todo)
-                    else if (keyCode == KeyEvent.VK_ESCAPE) {
+                    else if (keyCode == KeyEvent.VK_BACK_SPACE) {
                         pantallaEntrada.setText("");  
                         pantallaMemoria.setText("");
                         operador = "";
